@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="start-box">
-        <h1>Jogo da Memória</h1>
-        <button onclick="start()">Começar</button>
-    </div>
     <div class="game-conteiner">
+        <div class="start-box">
+            <h1>Jogo da Memória</h1>
+            <button onclick="start()">Começar</button>
+        </div>
+
+        <div class="grid hide"></div>
+        
         <div class="win-box hide">
             <h1 class="win-text">Você ganhou!</h1>
             <button class="replay-btn" onclick="replay()">Jogar novamente</button>
         </div>
-        <div class="grid hide"></div>
     </div>
 <script src="script.js"></script>
 </body>

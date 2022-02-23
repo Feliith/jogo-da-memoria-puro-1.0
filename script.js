@@ -38,8 +38,15 @@ const cardsArray = [
     },
 ]
 
+cardsArray.sort(() => 0.5 - Math.random())
+
 const startBox = document.querySelector('.start-box')
 const Grid = document.querySelector('.grid')
+const winBox = document.querySelector('.win-box')
+
+let cardsChosen = []
+let cardsChosenId = []
+let cardsWon = []
 
 function startPlayArea() {
     for (let i = 0 ; i < cardsArray.length ; i++) {
@@ -52,9 +59,43 @@ function startPlayArea() {
     }
 }
 
+function checkForMatch() {
+    Grid.style.pointerEvents = 'auto'
+    const Cards = document.querySelectorAll('.card')
+    const optionOneId = cardsChosenId[0]
+    const optionTwoId = cardsChosenId[1]
+
+    if (cardsChosen[0] == cardsChosen[1]) {
+        Cards[optionOneId].style.opacity = '0'
+        Cards[optionTwoId].style.opacity = '0'
+        Cards[optionOneId].style.pointerEvents = 'none'
+        Cards[optionTwoId].style.pointerEvents = 'none'
+        cardsWon.push(cardsChosen)
+    } else {
+        Cards[optionOneId].setAttribute('src', 'img/verse.png')
+        Cards[optionTwoId].setAttribute('src', 'img/verse.png')
+    }
+
+    cardsChosen = []
+    cardsChosenId = []
+    
+    if (cardsWon.length == cardsArray.length/2) {
+        setTimeout(() => {
+            Grid.classList.add('hide')
+            winBox.classList.remove('hide')
+        }, 600)
+    }
+}
 
 function flipCard() {
-
+    const cardId = this.getAttribute('id')
+    cardsChosen.push(cardsArray[cardId].src)
+    cardsChosenId.push(cardId)
+    this.setAttribute('src', cardsArray[cardId].src)
+    if (cardsChosen.length == 2) {
+        Grid.style.pointerEvents = 'none'
+        setTimeout(checkForMatch, 500)
+    }
 }
 
 startPlayArea()

@@ -24,7 +24,8 @@
 }
 
 body {
-    background: #242424;
+    background: #121212;
+    color: var(--font-01);
     font-family: "Poppins", sans-serif;
     height: 100vh;
     text-align: center;
@@ -62,7 +63,7 @@ button:hover {
 }
 
 .win-box, .start-box {
-    background: var(--font-01);
+    background: var(--dark-theme);
     width: 350px;
     height: 250px;
     padding: 32px;
@@ -87,7 +88,7 @@ button:hover {
 }
 
 .grid {
-    background: #fff;
+    background: var(--dark-theme);
     width: 400px;
     height: 530px;
     padding: 12px;
