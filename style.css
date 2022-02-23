@@ -27,7 +27,7 @@ body {
     background: #121212;
     color: var(--font-01);
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+    height: 100%;
     text-align: center;
     display: flex;
     align-items: center;
@@ -98,6 +98,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 img {
