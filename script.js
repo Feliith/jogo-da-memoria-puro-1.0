@@ -72,6 +72,9 @@ function checkForMatch() {
         Cards[optionTwoId].style.pointerEvents = 'none'
         cardsWon.push(cardsChosen)
     } else {
+        Cards[optionOneId].style.transform = 'rotateY(0deg)'
+        Cards[optionTwoId].style.transform = 'rotateY(0deg)'
+
         Cards[optionOneId].setAttribute('src', 'img/verse.png')
         Cards[optionTwoId].setAttribute('src', 'img/verse.png')
     }
@@ -92,6 +95,9 @@ function flipCard() {
     cardsChosen.push(cardsArray[cardId].src)
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardsArray[cardId].src)
+
+    this.style.transform = 'rotateY(180deg)'
+
     if (cardsChosen.length == 2) {
         Grid.style.pointerEvents = 'none'
         setTimeout(checkForMatch, 500)
