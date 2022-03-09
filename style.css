@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --standard-dark-color: #80bd5a;
-    --standard-color: #9be979;
+    --standard-color: #ffdf00;
     --standard-light-color: ;
 
     --contrast-color: #ff5b5b;
@@ -40,10 +39,10 @@ h1 {
 }
 
 button {
-    background: linear-gradient(45deg, var(--standard-color), var(--font-01));
+    background: var(--standard-color);
+    color: var(--dark-theme-02);
     background-size: 200%;
     background-position: left;
-    color: var(--font-01);
     border: none;
     border-radius: 50px;
     font-size: 22px;
